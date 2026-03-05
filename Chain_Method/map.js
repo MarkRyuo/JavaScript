@@ -28,17 +28,18 @@ const discounts = products.map((product) => {
 
 const newProduct = products.map((product) => {
     let category ;
-    if(product.price >= 20000){
+    let newPrice = product.price * 0.5;
+    if(newPrice >= 20000){
         category = "High";
-    }else if(product.price >= 10000){
+    }else if(newPrice >= 10000){
         category = "Mid";
     }else {
         category = "Low";
     }
-
     return {
         ...product,
-        category: product.category
+        price: newPrice,
+        category: category
     }
 })
 
