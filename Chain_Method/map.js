@@ -1,26 +1,5 @@
 
 
-// If we change the original array; 
-let prices = [2,4,6,8,10,12];
-
-prices.forEach(function(price, index, arr){
-    arr[index] = price * 0.5;
-});
-
-console.log(prices, typeof prices);
-
-
-// If dont want to change the original value 
-
-let newDiscount = [] ;
-
-prices.forEach(function(price){
-    newDiscount.push(price * 0.5);
-});
-
-console.log(`New Discount ${newDiscount}`);
-
-
 const products = [
   { name: "Laptop", price: 55000, color: "Silver" },
   { name: "Smartphone", price: 25000, color: "Black" },
@@ -36,10 +15,20 @@ const products = [
   { name: "Smartwatch", price: 7000, color: "Space Gray" }
 ];
 
-products.forEach((product, index, arr) => {
-    let category;
-    let newPrice = product.price * 0.5;
 
+const discounts = products.map((product) => {
+    if(product.price > 0.5)
+    return {
+        ...product,
+        price: product.price * 0.5,
+    };
+});
+
+//console.log(discounts);
+
+const newProduct = products.map((product) => {
+    let category ;
+    let newPrice = product.price * 0.5;
     if(newPrice >= 20000){
         category = "High";
     }else if(newPrice >= 10000){
@@ -47,11 +36,11 @@ products.forEach((product, index, arr) => {
     }else {
         category = "Low";
     }
-
-    product.category = category
-    product.price = newPrice;
-
+    return {
+        ...product,
+        price: newPrice,
+        category: category
+    }
 })
 
-
-console.log(products)
+console.log(newProduct)
