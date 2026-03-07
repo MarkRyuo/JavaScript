@@ -47,4 +47,31 @@ console.log(addToNames)
 // Ouput ["Hello jhon", "Hello mark", "Hello moda" ];
 
 
+/**
+ * 
+ * Test04
+ * Get String Lengths
+ * Return the length of each word
+ * 
+ */
 
+const words = ["sun", "galaxy", "star"];
+
+const wordsCount = words.map((word) => {
+    return word.length;
+}) 
+
+console.log(wordsCount)
+
+
+/**
+ * Test 05
+ * Convert Numbers to Strings
+ * Turn numbers into strings.
+ */
+
+const numbers = [1, 2, 3];
+
+const convertNumbersToStr = numbers.map((number) => number.toString())
+
+console.log(convertNumbersToStr);
