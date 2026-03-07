@@ -38,19 +38,19 @@ const products = [
 
 products.forEach((product, index, arr) => {
     let category;
+    let newPrice = product.price * 0.5;
 
-    if(product.price >= 20000){
+    if(newPrice >= 20000){
         category = "High";
-    }else if(product.price >= 10000){
+    }else if(newPrice >= 10000){
         category = "Mid";
     }else {
         category = "Low";
     }
 
-    return {
-        ...product,
-        category: category
-    }
+    product.category = category
+    product.price = newPrice;
+
 })
 
 
