@@ -75,3 +75,9 @@ const numbers = [1, 2, 3];
 const convertNumbersToStr = numbers.map((number) => number.toString())
 
 console.log(convertNumbersToStr);
+
+
+/**
+ * Test 06 
+ * 
+ */
